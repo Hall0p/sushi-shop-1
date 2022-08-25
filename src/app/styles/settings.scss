@@ -1,0 +1,19 @@
+@import "normalize";
+@import "vars";
+@import "fonts";
+
+* {
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  color: $dark;
+}
+
+.container {
+  max-width: 1170px;
+  flex-basis: 90%;
+}

@@ -12,19 +12,22 @@ const Roll = ({roll}) => {
   }
 
   return (
-    <div className="sushi">
-      <h3 className="sushi-name">{roll.name}</h3>
-      <div className="sushi-recipe">
-        {roll.open
-          ? <Open/>
-          : <Closed/>
-        }
-        {
-          roll.inside.map(ingredient => {
-            return <img src={ingredient} alt="ingredient"/>
-          })
-        }
+    <div className="roll">
+      <div className="roll-wrapper">
+        <h3 className="roll__header">{roll.name}</h3>
+        <div className="roll-recipe">
+          {roll.open
+            ? <Open/>
+            : <Closed/>
+          }
+          {
+            roll.inside.map((ingredient, index) => {
+              return <img key={index} src={ingredient} alt="ingredient"/>
+            })
+          }
+        </div>
       </div>
+      <img src={roll.image} alt="roll" className="roll__image"/>
     </div>
   );
 };

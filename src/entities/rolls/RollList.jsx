@@ -7,9 +7,11 @@ const RollList = () => {
 
   return (
     <div className="main">
-      {rollsSushi.map(roll =>
-        <Roll roll={roll}/>
-      )}
+      <div className="main-wrapper container">
+        {rollsSushi.map((roll) =>
+          <Roll roll={roll} key={roll.name}/>
+        )}
+      </div>
     </div>
   );
 };

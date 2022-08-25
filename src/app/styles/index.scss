@@ -1,0 +1,61 @@
+@import "settings";
+
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  &-logo {
+    width: 200px;
+  }
+}
+.search {
+  flex-basis: 75%;
+  justify-self: right;
+  font-size: 20px;
+  align-self: center;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: $light-green;
+  padding: 40px 0;
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.roll {
+  min-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 49%;
+  margin-bottom: 20px;
+  background-color: $white;
+  &-wrapper {
+    padding: 10px;
+    border-radius: 5px;
+    height: 200px;
+  }
+  &__header {
+    margin: 0;
+    font-size: 30px;
+  }
+  &__image {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    object-fit: cover;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
