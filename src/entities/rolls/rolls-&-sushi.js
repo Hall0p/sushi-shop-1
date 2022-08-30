@@ -61,7 +61,7 @@ export const rollsSushi = [
   {image: filaShrimp, name: 'Филадельфия эби', open: true, inside: [cheese, shrimp], outside: salmon},
   {image: filaAvocado, name: 'Филадельфия с авокадо', open: true, inside: [cheese, avocado], outside: salmon},
   {image: cheeseMaki, name: 'Чизмаки', open: false, inside: [cheese, cucumber, salmon]},
-  {image: cheeseMakiTemp, name: 'Чизмаки', open: false, fried: true, inside: [cheese, cucumber, salmon]},
+  {image: cheeseMakiTemp, name: 'Чизмаки гор.', open: false, fried: true, inside: [cheese, cucumber, salmon]},
   {image: batakon, name: 'Батакон', open: true, inside: [cheese, cucumber, chicken], outside: bacon},
   {image: canada, name: 'Канада', open: true, inside: [cheese, cucumber, salmon], outside: eel},
   {image: dragon, name: 'Дракон', open: true, inside: [cheese, crab, cucumber, avocado], outside: eel},
