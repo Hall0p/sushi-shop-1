@@ -7,13 +7,52 @@
 }
 
 .header{
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 50px;
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
   &-logo {
     width: 200px;
   }
+  &-bottom {
+    display: flex;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    &__widget {
+      padding: 5px 30px;
+      font-size: 30px;
+      font-weight: normal;
+      cursor: pointer;
+      transition: background-color .2s ease-out;
+      border-radius: 5px;
+      &:hover {
+        background-color: $light-green;
+      }
+    }
+  }
 }
+
+.footer {
+  font-family: sans-serif;
+  height: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 20px;
+  &__date {
+    font-weight: bold;
+    margin: 0;
+  }
+  &__text {
+    font-weight: normal;
+  }
+}
+
 .search {
   flex-basis: 75%;
   justify-self: right;
@@ -37,7 +76,7 @@
 .roll {
   flex-basis: 49%;
   min-width: 520px;
-  height: 210px;
+  height: 220px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -52,7 +91,7 @@
     flex-direction: column;
   }
   &__header {
-    height: 71px;
+    height: 60px;
     margin: 0 0 10px;
     font-size: 30px;
     font-weight: normal;
@@ -61,7 +100,7 @@
   &__image {
     flex-shrink: 0;
     width: 300px;
-    height: 210px;
+    height: 220px;
     overflow: hidden;
     object-fit: cover;
     border-bottom-right-radius: 5px;
@@ -69,20 +108,21 @@
   }
   &-recipe {
     display: flex;
-    flex-wrap: wrap;
     align-content: flex-start;
     flex-grow: 1;
     min-width: 220px;
+    &__wrapper {
+      display: flex;
+      height: 80px;
+      &--inside {
+        flex-wrap: wrap;
+      }
+    }
   }
   &-ingredient {
     width: 40px;
     height: 40px;
     margin-right: 5px;
-    &-wrapper {
-      margin: 0;
-      padding: 0;
-      height: 40px;
-    }
     &__circle {
       margin-right: 5px;
       width: 40px;

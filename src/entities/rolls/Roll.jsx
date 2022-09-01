@@ -15,29 +15,33 @@ const Roll = ({roll}) => {
       <div className="roll-wrapper">
         <h3 className="roll__header">{roll.name}</h3>
         <div className="roll-recipe">
-            {roll.outside &&
-              <img
-                src={roll.outside}
-                alt="outside ingredient"
-                className="roll-ingredient roll-ingredient--outside"
-              />
-            }
-            {roll.open
-              ? <Open/>
-              : <Closed/>
-            }
-            {
-              roll.inside.map((ingredient, index) => {
-                return (
-                  <img
-                    key={index}
-                    src={ingredient}
-                    alt="inside ingredient"
-                    className="roll-ingredient roll-ingredient--inside"
-                  />
-                )
-              })
-            }
+            <div className="roll-recipe__wrapper">
+              {roll.outside &&
+                <img
+                  src={roll.outside}
+                  alt="outside ingredient"
+                  className="roll-ingredient roll-ingredient--outside"
+                />
+              }
+              {roll.open
+                ? <Open/>
+                : <Closed/>
+              }
+            </div>
+            <div className="roll-recipe__wrapper--inside">
+              {
+                roll.inside.map((ingredient, index) => {
+                  return (
+                    <img
+                      key={index}
+                      src={ingredient}
+                      alt="inside ingredient"
+                      className="roll-ingredient roll-ingredient--inside"
+                    />
+                  )
+                })
+              }
+            </div>
         </div>
         <h3 className="roll__price">
           300 ₽

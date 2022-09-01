@@ -1,6 +1,6 @@
 import React from 'react';
-import {rollsSushi} from "./rolls-&-sushi";
-import Roll from "./Roll";
+import {rollsSushi} from "../entities/rolls/rolls-&-sushi";
+import Roll from "../entities/rolls/Roll";
 
 
 const RollList = () => {
