@@ -23,10 +23,15 @@ const Roll = ({roll}) => {
                   className="roll-ingredient roll-ingredient--outside"
                 />
               }
-              {roll.open
-                ? <Open/>
-                : <Closed/>
-              }
+              <div className="roll-ingredient__circle--wrapper">
+                {roll.open
+                  ? <Open/>
+                  : <Closed/>
+                }
+                {roll.half &&
+                  <span className="roll-ingredient__circle--line"/>
+                }
+              </div>
             </div>
             <div className="roll-recipe__wrapper--inside">
               {
