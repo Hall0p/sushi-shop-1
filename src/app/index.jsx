@@ -1,13 +1,16 @@
+import React from 'react';
 import RollList from "../pages/RollList";
 import './index.scss'
 import Header from "../widgets/Header";
 import Footer from "../widgets/Footer";
-import Switcher from "../entities/switcher/Switcher";
 
 function App() {
+
+
   return (
-    <div className="app">
-      <Switcher/>
+    <div
+      className="app"
+    >
       <Header/>
       <RollList/>
       <Footer/>
