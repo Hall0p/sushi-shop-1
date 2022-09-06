@@ -2,17 +2,17 @@
 
 .wrapper {
   position: relative;
-  width: 20px;
-  height: 40px;
+  width: 16px;
+  height: 35px;
 }
 
 .container {
   z-index: 1;
   position: absolute;
-  width: 20px;
-  height: 40px;
+  width: 16px;
+  height: 35px;
   border: 2px solid $dark;
-  border-radius: 10px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -21,9 +21,8 @@
   position: absolute;
   top: 0;
   left: 1px;
-  width: 18px;
-  height: 18px;
-  border-radius: 10px;
-  background-color: $blue;
+  width: 14px;
+  height: 14px;
+  background-color: $dark;
   transition: top ease-in-out .1s;
 }
