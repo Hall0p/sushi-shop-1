@@ -59,6 +59,9 @@ const Roll = ({roll}) => {
         </div>
       </div>
       <img src={roll.image} alt="roll" className="roll__image"/>
+      <span className="roll__weight">
+        {switcher ? 150 : 250} г.
+      </span>
     </div>
   );
 };
