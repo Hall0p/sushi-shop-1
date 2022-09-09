@@ -1,5 +1,5 @@
 import React from 'react';
-import RollList from "../pages/RollList";
+import RollsList from "../pages/RollsList";
 import './index.scss'
 import Header from "../widgets/Header";
 import Footer from "../widgets/Footer";
@@ -12,7 +12,7 @@ function App() {
       className="app"
     >
       <Header/>
-      <RollList/>
+      <RollsList/>
       <Footer/>
     </div>
   );

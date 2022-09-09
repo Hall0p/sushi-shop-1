@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sets = () => {
+const SetsList = () => {
   return (
     <div className="main">
       <div className="main-wrapper container">
@@ -10,4 +10,4 @@ const Sets = () => {
   );
 };
 
-export default Sets;
+export default SetsList;

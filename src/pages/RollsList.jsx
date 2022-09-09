@@ -3,7 +3,7 @@ import {rollsSushi} from "../entities/rolls/rolls-&-sushi";
 import Roll from "../entities/rolls/Roll";
 
 
-const RollList = () => {
+const RollsList = () => {
 
   return (
     <div className="main">
@@ -16,4 +16,4 @@ const RollList = () => {
   );
 };
 
-export default RollList;
+export default RollsList;
