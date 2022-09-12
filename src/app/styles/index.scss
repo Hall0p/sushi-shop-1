@@ -111,6 +111,11 @@
     object-fit: cover;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
+    &--warning {
+      font-size: 30px;
+      text-align: center;
+      padding: 20px 5px;
+    }
   }
   &-recipe {
     display: flex;
