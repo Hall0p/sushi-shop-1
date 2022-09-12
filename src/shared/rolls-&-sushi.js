@@ -11,6 +11,7 @@ import cucumber from "./img/ingredients/cucumber.svg"
 import eel from "./img/ingredients/eel.svg"
 import tuna from "./img/ingredients/tuna.svg"
 import salad from "./img/ingredients/salad.svg"
+
 import fila from "./img/rolls/1.jpg"
 import california from "./img/rolls/2.jpg"
 import lavaSyake from "./img/rolls/3.jpg"
@@ -49,6 +50,7 @@ import sakeHotto from "./img/rolls/35.jpg"
 import honsuMaki from "./img/rolls/36.jpg"
 import shrimpTemp from "./img/rolls/37.jpg"
 import sakeShrimpTemp from "./img/rolls/38.jpg"
+import yumi from "./img/rolls/42.jpg"
 
 
 export const rollsSushi = [
@@ -92,5 +94,6 @@ export const rollsSushi = [
   {id: 38,image: sakeShrimpTemp, name: 'Сяке эби темпура', open: true, fried: true, inside: [cheese, salmon, shrimp]},
   {id: 39,image: panda, name: 'Ролл панда', open: false, fried: true, inside: [cheese, salmon, eel, bacon]},
   {id: 40, image: '', name: 'Суши с угрём', inside: [eel]},
-  {id: 41, image: '', name: 'Суши с лососем', inside: [salmon]}
+  {id: 41, image: '', name: 'Суши с лососем', inside: [salmon]},
+  {id: 42, image: yumi, name: 'Юми', inside: [cheese, cucumber, salad]},
 ]
