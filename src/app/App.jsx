@@ -1,18 +1,14 @@
 import React from 'react';
-import RollsList from "../pages/RollsList";
 import './index.scss'
 import Header from "../widgets/Header";
 import Footer from "../widgets/Footer";
+import {Outlet} from "react-router-dom";
 
 function App() {
-
-
   return (
-    <div
-      className="app"
-    >
+    <div className="app">
       <Header/>
-      <RollsList/>
+      <Outlet/>
       <Footer/>
     </div>
   );
