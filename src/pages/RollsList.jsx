@@ -1,5 +1,5 @@
 import React from 'react';
-import {rollsSushi} from "../entities/rolls/rolls-&-sushi";
+import {rollsSushi} from "../shared/rolls-&-sushi";
 import Roll from "../entities/rolls/Roll";
 
 
