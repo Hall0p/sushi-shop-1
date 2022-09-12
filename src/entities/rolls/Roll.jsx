@@ -38,10 +38,10 @@ const Roll = ({roll}) => {
           </div>
           <div className="roll-recipe__wrapper--inside">
             {
-              roll.inside.map((ingredient, index) => {
+              roll.inside.map((ingredient) => {
                 return (
                   <img
-                    key={index}
+                    key={roll.id}
                     src={ingredient}
                     alt="inside ingredient"
                     className="roll-ingredient roll-ingredient--inside"
@@ -58,7 +58,10 @@ const Roll = ({roll}) => {
           </h3>
         </div>
       </div>
-      <img src={roll.image} alt="roll" className="roll__image"/>
+      {roll.image
+        ? <img src={roll.image} alt="roll" className="roll__image"/>
+        : <span className="roll__image roll__image--warning">Картинки нет, но вы держитесь</span>
+      }
       <span className="roll__weight">
         {switcher ? 150 : 250} г.
       </span>
