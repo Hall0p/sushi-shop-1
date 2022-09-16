@@ -1,7 +1,7 @@
 import React from 'react';
-import openImage from "../../shared/img/roll-outside/open-roll.svg";
-import closedImage from "../../shared/img/roll-outside/closed-roll.svg";
-import Switcher from "../switcher/Switcher";
+import openImage from "../shared/img/roll-outside/open-roll.svg";
+import closedImage from "../shared/img/roll-outside/closed-roll.svg";
+import Switcher from "../entities/switcher/Switcher";
 import {useState} from "react";
 
 const Roll = ({roll}) => {

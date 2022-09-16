@@ -1,6 +1,6 @@
 import React from 'react';
 import {rollsSushi} from "../shared/rolls-&-sushi";
-import Roll from "../entities/rolls/Roll";
+import Roll from "../widgets/Roll";
 
 
 const RollsList = () => {

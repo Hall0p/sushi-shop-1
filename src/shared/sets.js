@@ -1,4 +1,4 @@
-const sets = [
+export const sets = [
   {name: 'Компашка', id: 1, compound: [9,1,31.5,18.5,3,34,35]},
   {name: 'Мальчишник', id: 1, compound: [22,3.5,1.5,24.5,33.5,35]},
   {name: 'Девичник', id: 1, compound: [18.5,25.5,2.5,10,34,11.5]},
