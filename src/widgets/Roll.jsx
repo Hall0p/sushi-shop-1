@@ -38,10 +38,10 @@ const Roll = ({roll}) => {
           </div>
           <div className="roll-recipe__wrapper--inside">
             {
-              roll.inside.map((ingredient) => {
+              roll.inside.map((ingredient,index) => {
                 return (
                   <img
-                    key={roll.id}
+                    key={index}
                     src={ingredient}
                     alt="inside ingredient"
                     className="roll-ingredient roll-ingredient--inside"
