@@ -188,7 +188,7 @@ body {
 }
 
 .set {
-  z-index: 5;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -196,7 +196,7 @@ body {
   flex-basis: 100%;
 }
 .set-line {
-  z-index: 5;
+  z-index: 10;
   background-color: #2e2e33;
   width: 100%;
   height: 10px;
@@ -208,42 +208,41 @@ body {
   border-bottom-right-radius: 3px;
 }
 .set-top {
+  z-index: 10;
   background-color: white;
   border-radius: 5px;
-  height: 220px;
+  height: 240px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
 }
-.set-rolls {
-  position: absolute;
-  top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.set-rolls-wrapper {
+.set-bottom {
   position: relative;
   z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: height 0.2s ease-out;
 }
-.set-rolls-wall {
-  z-index: 4;
-  background-color: #f6fbf6;
+.set-rolls {
+  z-index: 1;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  transition: all linear 3s;
-}
-.set-rolls--open {
+  top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.set-rolls--closed {
-  height: 0;
+.set-wall {
+  transition: all 0.2s ease-out;
+  z-index: 5;
+  background-color: #f6fbf6;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 @media screen and (max-width: 1230px) {

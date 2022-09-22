@@ -13,32 +13,37 @@ const Set = ({set}) => {
           <h3 className="roll__header">{set.name}</h3>
           <span className="set__amount">{set.compound.length}</span>
         </div>
-        <img src="sushi/src/widgets/Set#" alt="set" className="roll__image set__image"/>
+        {set.img
+          ? <img src="sushi/src/widgets/Set#" alt="set" className="roll__image set__image"/>
+          : <span className="set__image roll__image--warning">Картинки нет, но вы держитесь</span>
+        }
       </div>
       <div
-        className="set-rolls-wrapper"
-        style={{height: isOpen ? Math.ceil(set.compound.length / 2) * 240 + 20 : 20}}
+        className="set-bottom"
+        style={{height: isOpen ? Math.ceil(set.compound.length / 2) * 240 + 30 : 20}}
       >
         <SetLine
           className="set-line__top"
           isOpen={isOpen}
           setIsOpen={setIsOpen}
         />
+        <div className="set-bottom-wrapper">
+        </div>
         <div
-          className={'set-rolls ' + (isOpen ? 'set-rolls--open' : 'set-rolls--closed')}
-        >
-          {isOpen && set.compound.map((id) => {
+          style={{height: Math.ceil(set.compound.length / 2) * 240}}
+          className={'set-rolls'}>
+          {set.compound.map((id) => {
             id = Math.trunc(id)
             const intoSet = rollsSushi.find((roll) =>
               roll.id === id
             )
             return <Roll roll={intoSet}/>
           })}
+          <div
+            style={{height: !isOpen ? Math.ceil(set.compound.length / 2) * 240 : 0}}
+            className="set-wall">
+          </div>
         </div>
-        <div
-          className="set-rolls-wall"
-          style={{height: isOpen ? 0 : Math.ceil(set.compound.length / 2) * 240 + 20}}
-        ></div>
         <SetLine
           className="set-line__bottom"
           isOpen={isOpen}
