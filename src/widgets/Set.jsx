@@ -32,12 +32,14 @@ const Set = ({set}) => {
         <div
           style={{height: Math.ceil(set.compound.length / 2) * 240}}
           className={'set-rolls'}>
-          {set.compound.map((id) => {
-            id = Math.trunc(id)
+          {set.compound.map((idIsHalf) => {
+            const id = Math.trunc(idIsHalf)
+
+            const isHalf = id !== idIsHalf
             const intoSet = rollsSushi.find((roll) =>
               roll.id === id
             )
-            return <Roll roll={intoSet}/>
+            return <Roll isHalf={isHalf} roll={intoSet}/>
           })}
           <div
             style={{height: !isOpen ? Math.ceil(set.compound.length / 2) * 240 : 0}}

@@ -4,8 +4,8 @@ import closedImage from "../shared/img/roll-outside/closed-roll.svg";
 import Switcher from "../entities/switcher/Switcher";
 import {useState} from "react";
 
-const Roll = ({roll}) => {
-  const [switcher, setSwitcher] = useState(false);
+const Roll = ({isHalf = false, roll}) => {
+  const [switcher, setSwitcher] = useState(isHalf);
 
   const Open = () => {
     return <img src={openImage} alt="open roll" className="roll-ingredient__circle"/>
