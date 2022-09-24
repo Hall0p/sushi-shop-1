@@ -7,6 +7,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 200;
   color: #2e2e33;
+  margin: 0;
 }
 
 .app {
@@ -70,6 +71,21 @@ body {
   justify-self: right;
   font-size: 20px;
   align-self: center;
+}
+
+.weight {
+  z-index: 100;
+  height: 40px;
+  position: absolute;
+  top: 180px;
+  right: 0;
+  background-color: #2e2e33;
+  color: white;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-top-left-radius: 5px;
 }
 
 .main {
@@ -175,19 +191,10 @@ body {
 }
 .roll__weight {
   width: 81px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-color: #2e2e33;
-  color: white;
-  font-size: 24px;
-  line-height: 30px;
-  font-weight: 400;
-  padding: 5px 10px;
-  border-top-left-radius: 5px;
 }
 
 .set {
+  position: relative;
   z-index: 0;
   display: flex;
   flex-direction: column;
@@ -211,7 +218,7 @@ body {
   z-index: 10;
   background-color: white;
   border-radius: 5px;
-  height: 240px;
+  height: 220px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -243,6 +250,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+}
+.set__weight {
+  width: 94px;
 }
 
 @media screen and (max-width: 1230px) {

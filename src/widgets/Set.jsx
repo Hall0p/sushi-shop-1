@@ -39,7 +39,7 @@ const Set = ({set}) => {
             const intoSet = rollsSushi.find((roll) =>
               roll.id === id
             )
-            return <Roll isHalf={isHalf} roll={intoSet}/>
+            return <Roll key={intoSet.id} isHalf={isHalf} roll={intoSet}/>
           })}
           <div
             style={{height: !isOpen ? Math.ceil(set.compound.length / 2) * 240 : 0}}
@@ -52,6 +52,9 @@ const Set = ({set}) => {
           setIsOpen={setIsOpen}
         />
       </div>
+      <span className="weight set__weight">
+        {set.compound.length * 250} г.
+      </span>
     </div>
   );
 };

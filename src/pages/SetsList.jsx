@@ -7,7 +7,7 @@ const SetsList = () => {
     <div className="main">
       <div className="main-wrapper container">
         {sets.map((set) =>
-          <Set set={set}/> )
+          <Set key={set.id} set={set}/> )
         }
       </div>
     </div>

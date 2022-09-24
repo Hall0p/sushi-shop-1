@@ -62,7 +62,7 @@ const Roll = ({isHalf = false, roll}) => {
         ? <img src={roll.image} alt="roll" className="roll__image"/>
         : <span className="roll__image roll__image--warning">Картинки нет, но вы держитесь</span>
       }
-      <span className="roll__weight">
+      <span className="weight roll__weight">
         {switcher ? 150 : 250} г.
       </span>
     </div>
