@@ -5,6 +5,8 @@ import SetLine from "../entities/SetLine";
 
 const Set = ({set}) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [height] = useState(Math.ceil(set.compound.length / 2) * 240)
+
 
   return (
     <div className="set">
@@ -20,7 +22,7 @@ const Set = ({set}) => {
       </div>
       <div
         className="set-bottom"
-        style={{height: isOpen ? Math.ceil(set.compound.length / 2) * 240 + 30 : 20}}
+        style={{height: isOpen ? height + 20 : 20}}
       >
         <SetLine
           className="set-line__top"
@@ -30,7 +32,7 @@ const Set = ({set}) => {
         <div className="set-bottom-wrapper">
         </div>
         <div
-          style={{height: Math.ceil(set.compound.length / 2) * 240}}
+          style={{height: height - 20}}
           className={'set-rolls'}>
           {set.compound.map((idIsHalf) => {
             const id = Math.trunc(idIsHalf)
@@ -42,7 +44,7 @@ const Set = ({set}) => {
             return <Roll key={intoSet.id} isHalf={isHalf} roll={intoSet}/>
           })}
           <div
-            style={{height: !isOpen ? Math.ceil(set.compound.length / 2) * 240 : 0}}
+            style={{height: !isOpen ? height : 0}}
             className="set-wall">
           </div>
         </div>
