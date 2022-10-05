@@ -7,9 +7,11 @@ const Set = ({set}) => {
   const [isOpen, setIsOpen] = useState(false)
   const [height] = useState(Math.ceil(set.compound.length / 2) * 240)
 
-
   return (
-    <div className="set">
+    <div
+      className="set"
+      onClick={() => setIsOpen(!isOpen)}
+    >
       <div className="set-top">
         <div className="set-wrapper">
           <h3 className="roll__header">{set.name}</h3>
@@ -29,8 +31,6 @@ const Set = ({set}) => {
           isOpen={isOpen}
           setIsOpen={setIsOpen}
         />
-        <div className="set-bottom-wrapper">
-        </div>
         <div
           style={{height: height - 20}}
           className={'set-rolls'}>
