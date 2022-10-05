@@ -224,7 +224,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: height 3s ease-in;
   }
   &-rolls {
     z-index: 1;
@@ -237,7 +236,7 @@
     margin-top: 10px;
   }
   &-wall {
-    transition: height 3s ease-in;
+    transition: transform .3s linear;
     z-index: 999;
     background-color: $light-green;
     position: absolute;
@@ -245,6 +244,9 @@
     left: 0;
     right: 0;
     bottom: 0;
+    &--open {
+      transform: translateY(100%);
+    }
   }
   &__weight {
     width: 95px;

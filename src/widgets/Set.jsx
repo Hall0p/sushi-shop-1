@@ -1,11 +1,22 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {rollsSushi} from "../shared/rolls-&-sushi";
 import Roll from "./Roll";
 import SetLine from "../entities/SetLine";
 
 const Set = ({set}) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [delayedHeight, setDelayedHeight] = useState(20)
   const [height] = useState(Math.ceil(set.compound.length / 2) * 240)
+
+  useEffect(() => {
+    if (isOpen) {
+      setDelayedHeight(height + 20)
+      return
+    }
+    if (!isOpen) {
+      setTimeout(() => setDelayedHeight(20),300)
+    }
+  },[isOpen])
 
   return (
     <div
@@ -24,7 +35,7 @@ const Set = ({set}) => {
       </div>
       <div
         className="set-bottom"
-        style={{height: isOpen ? height + 20 : 20}}
+        style={{height: delayedHeight}}
       >
         <SetLine
           className="set-line__top"
@@ -44,8 +55,8 @@ const Set = ({set}) => {
             return <Roll key={intoSet.id} isHalf={isHalf} roll={intoSet}/>
           })}
           <div
-            style={{height: !isOpen ? height : 0}}
-            className="set-wall">
+            style={{height}}
+            className={'set-wall ' + (isOpen ? 'set-wall--open' : 'set-wall--closed')}>
           </div>
         </div>
         <SetLine

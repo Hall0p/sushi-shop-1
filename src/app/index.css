@@ -233,7 +233,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: height 3s ease-in;
 }
 .set-rolls {
   z-index: 1;
@@ -246,7 +245,7 @@ body {
   margin-top: 10px;
 }
 .set-wall {
-  transition: height 3s ease-in;
+  transition: transform 0.3s linear;
   z-index: 999;
   background-color: #f6fbf6;
   position: absolute;
@@ -254,6 +253,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+}
+.set-wall--open {
+  transform: translateY(100%);
 }
 .set__weight {
   width: 95px;
