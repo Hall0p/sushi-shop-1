@@ -2,7 +2,8 @@ import React from 'react';
 import classes from "./Switcher.module.scss";
 
 const Switcher = ({switcher, setSwitcher}) => {
-  const onClick = () => {
+  const onClick = (e) => {
+    e.stopPropagation()
     setSwitcher(switcher === false)
   }
 
