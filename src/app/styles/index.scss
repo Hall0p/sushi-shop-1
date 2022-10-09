@@ -26,13 +26,17 @@
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
-    &__widget {
+    &__link {
+      margin-right: 5px;
       padding: 5px 30px;
       font-size: 30px;
       font-weight: normal;
-      cursor: pointer;
       transition: background-color .2s ease-out;
-      border-radius: 5px;
+      text-decoration: none;
+      color: inherit;
+      &--active {
+        background-color: $light-green;
+      }
       &:hover {
         background-color: $light-green;
       }

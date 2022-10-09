@@ -12,6 +12,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App/>}>
         <Route index element={<SetsList/>}/>
+        <Route path="sets" element={<SetsList/>}/>
         <Route path="rolls" element={<RollsList/>}/>
         <Route path="*" element={<Warning/>}/>
       </Route>

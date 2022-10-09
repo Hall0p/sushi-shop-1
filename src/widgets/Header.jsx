@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from "../shared/img/Logo.svg";
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
   return (
@@ -10,11 +11,29 @@ const Header = () => {
           <input type="text" className="search" placeholder="Поиск"/>
         </div>
         <ul className="header-bottom">
-          <li className="header-bottom__widget">
-            Роллы
+          <li>
+            <NavLink
+              to='rolls'
+              className={({isActive}) =>
+                isActive
+                  ? 'header-bottom__link header-bottom__link--active'
+                  : 'header-bottom__link header-bottom__link--disabled'
+              }
+            >
+              Роллы
+            </NavLink>
           </li>
-          <li className="header-bottom__widget">
-            Сеты
+          <li>
+            <NavLink
+              to='sets'
+              className={({isActive}) =>
+                isActive
+                  ? 'header-bottom__link header-bottom__link--active'
+                  : 'header-bottom__link header-bottom__link--disabled'
+              }
+            >
+              Сеты
+            </NavLink>
           </li>
         </ul>
       </header>
