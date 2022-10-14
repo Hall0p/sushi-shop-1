@@ -2,14 +2,18 @@ import React from 'react';
 import logo from "../shared/img/Logo.svg";
 import {NavLink} from "react-router-dom";
 import Search from "../features/Search";
+import {useSelector} from "react-redux";
 
 const Header = ({filter, setFilter}) => {
+  const sum = useSelector(state => state.sum.sum)
+
   return (
     <div className="container">
       <header className="header">
         <div className="header-top">
           <img src={logo} alt="" className="header-logo"/>
           <Search filter={filter} setFilter={setFilter}/>
+          <span>{sum}</span>
         </div>
         <ul className="header-bottom">
           <li>
