@@ -7,6 +7,7 @@ import SetsList from "./pages/SetsList";
 import Warning from "./pages/Warning";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <BrowserRouter>
     <Routes>

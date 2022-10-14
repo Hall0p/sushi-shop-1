@@ -1,14 +1,15 @@
 import React from 'react';
 import logo from "../shared/img/Logo.svg";
 import {NavLink} from "react-router-dom";
+import Search from "../features/Search";
 
-const Header = () => {
+const Header = ({filter, setFilter}) => {
   return (
     <div className="container">
       <header className="header">
         <div className="header-top">
           <img src={logo} alt="" className="header-logo"/>
-          <input type="text" className="search" placeholder="Поиск"/>
+          <Search filter={filter} setFilter={setFilter}/>
         </div>
         <ul className="header-bottom">
           <li>
