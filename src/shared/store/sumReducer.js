@@ -8,9 +8,9 @@ const DECREASE_SUM = 'DECREASE_SUM'
 export const sumReducer = (state = defaultState, action) => {
   switch (action.type) {
     case INCREASE_SUM:
-      return {...state, SUM: state.SUM + action.payload}
+      return {...state, sum: state.sum + action.payload}
     case DECREASE_SUM:
-      return {...state, SUM: state.SUM - action.payload}
+      return {...state, sum: state.sum - action.payload}
     default: 
       return state
   }
