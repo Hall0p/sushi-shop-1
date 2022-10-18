@@ -5,7 +5,7 @@ const SetLine = ({className, isOpen, setIsOpen}) => {
   return (
     <button
       onClick={() => setIsOpen(!isOpen)}
-      className={className + ' ' + 'set-line'}
+      className={className + ' set-line'}
     >
     </button>
   );

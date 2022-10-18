@@ -16,7 +16,7 @@ const Set = ({set}) => {
     if (!isOpen) {
       setTimeout(() => setDelayedHeight(20),300)
     }
-  },[isOpen])
+  },[isOpen, height])
 
   return (
     <div
