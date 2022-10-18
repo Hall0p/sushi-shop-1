@@ -52,10 +52,13 @@ const Roll = ({isHalf = false, roll}) => {
           </div>
         </div>
         <div className="roll-bottom">
-          <Switcher switcher={switcher} setSwitcher={setSwitcher}/>
-          <h3 className="roll__price">
-            {switcher ? 150 : 300} ₽
-          </h3>
+          <div className="roll-bottom-wrapper">
+            <Switcher switcher={switcher} setSwitcher={setSwitcher}/>
+            <h3 className="roll__price">
+              {switcher ? 150 : 300} ₽
+            </h3>
+          </div>
+          <button className="buy-button">Купить</button>
         </div>
       </div>
       {roll.image
@@ -65,6 +68,7 @@ const Roll = ({isHalf = false, roll}) => {
       <span className="weight roll__weight">
         {switcher ? 150 : 250} г.
       </span>
+      <div className="set-line roll-line"></div>
     </div>
   );
 };
