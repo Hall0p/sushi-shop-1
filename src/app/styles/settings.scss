@@ -12,3 +12,9 @@ body {
   color: $dark;
   margin: 0;
 }
+
+.color {
+  &--green {
+    color: $green;
+  }
+}

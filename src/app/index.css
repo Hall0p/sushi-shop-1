@@ -10,6 +10,10 @@ body {
   margin: 0;
 }
 
+.color--green {
+  color: #53BB51;
+}
+
 .app {
   display: flex;
   flex-wrap: wrap;
@@ -302,6 +306,69 @@ body {
 .set__amount {
   font-weight: 400;
   font-size: 20px;
+}
+
+.cart {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+}
+.cart-right {
+  background-color: white;
+  padding: 22px;
+  border-radius: 10px;
+}
+.cart-right-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-center {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.cart-sum {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0 0 5px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: normal;
+  color: gray;
+}
+.cart-sum__total {
+  margin-top: 10px;
+  font-size: 26px;
+  line-height: 36px;
+  font-weight: bold;
+  color: #2e2e33;
+}
+.cart__button {
+  height: 40px;
+  flex-basis: 47%;
+  border-radius: 10px;
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: scale 50ms ease-out;
+}
+.cart__button--left {
+  border: 1px solid gray;
+  background-color: white;
+}
+.cart__button--right {
+  border: 1px solid #2e2e33;
+  background-color: #2e2e33;
+  color: white;
+}
+.cart__button:active {
+  scale: 1.05;
 }
 
 @media screen and (max-width: 1230px) {

@@ -7,6 +7,7 @@ import SetsList from "./pages/SetsList";
 import Warning from "./pages/Warning";
 import {Provider} from "react-redux";
 import store from "./shared/store";
+import Cart from "./pages/Cart";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -18,6 +19,7 @@ root.render(
           <Route index element={<SetsList/>}/>
           <Route path="sets" element={<SetsList/>}/>
           <Route path="rolls" element={<RollsList/>}/>
+          <Route path="cart" element={<Cart/>}/>
           <Route path="*" element={<Warning/>}/>
         </Route>
       </Routes>
