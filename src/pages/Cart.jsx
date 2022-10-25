@@ -5,7 +5,7 @@ const Cart = () => {
   const sum = useSelector(state => state.sum.sum)
 
   return (
-    <div className="main">
+    <main className="main">
       <div className="main-wrapper container">
         <div className="cart">
           <div className="cart-left">
@@ -14,7 +14,7 @@ const Cart = () => {
             </h1>
             <div className="cart-products">
                 <div className="cart-item">
-                  <img src="#" alt="cart item" className="cart__image"/>
+                  <img src="#" alt="cart item" className="cart-item__image"/>
                   <div className="cart-item-wrapper">
                     <div className="cart-item__left">
                       <h3 className="cart-item__header">Name</h3>
@@ -55,7 +55,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

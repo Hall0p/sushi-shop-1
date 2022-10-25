@@ -154,6 +154,40 @@ body {
   height: 140px;
   background-color: white;
   border-radius: 5px;
+  display: flex;
+}
+.cart-item__image {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.cart-item-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  width: 100%;
+  padding: 10px;
+}
+.cart-item__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cart-item__header {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+}
+.cart-item__weight {
+  font-size: 18px;
+  line-height: 30px;
+}
+.cart-item__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .cart-right {
   background-color: white;
