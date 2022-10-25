@@ -1,0 +1,68 @@
+.set {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-basis: 100%;
+  cursor: pointer;
+  &-line {
+    z-index: 1000;
+    background-color: $dark;
+    width: 100%;
+    height: 10px;
+    border: none;
+    &__bottom {
+      cursor: pointer;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+  &-top {
+    z-index: 10;
+    background-color: $white;
+    border-radius: 3px;
+    height: 220px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-bottom {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &-rolls {
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    margin-top: 10px;
+  }
+  &-wall {
+    transition: transform .3s linear;
+    z-index: 999;
+    background-color: $light-green;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &--open {
+      transform: translateY(100%);
+    }
+  }
+  &__weight {
+    width: 95px;
+  }
+  &__amount {
+    font-weight: 400;
+    font-size: 20px;
+  }
+}

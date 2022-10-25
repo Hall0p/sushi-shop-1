@@ -1,0 +1,64 @@
+@import "../vars";
+
+.cart {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  &-right {
+    background-color: $white;
+    padding: 22px;
+    border-radius: 10px;
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &-center {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  &-sum {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0 0 5px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: normal;
+    color: $gray;
+    &__total {
+      margin-top: 10px;
+      font-size: 26px;
+      line-height: 36px;
+      font-weight: bold;
+      color: $dark
+    }
+  }
+  &__button {
+    height: 40px;
+    flex-basis: 47%;
+    border-radius: 10px;
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: scale 50ms ease-out;
+    &--left {
+      border: 1px solid $gray;
+      background-color: $white;
+    }
+    &--right {
+      border: 1px solid $dark;
+      background-color: $dark;
+      color: $white;
+    }
+    &:active {
+      scale: 1.05;
+    }
+  }
+}
