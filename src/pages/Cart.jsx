@@ -18,7 +18,7 @@ const Cart = () => {
             </div>
           </div>
           <div className="cart-right">
-            <div className="cart-center">
+            <div className="sticky"><div className="cart-center">
               <ul className="cart-sum">
                 <li className="cart-sum--left">Товары:</li>
                 <li className="cart-sum--right">{sum}</li>
@@ -32,10 +32,10 @@ const Cart = () => {
                 <li className="cart-sum--right">{sum}</li>
               </ul>
             </div>
-            <div className="cart-right-bottom">
-              <button className="cart__button cart__button--left">Самовывоз</button>
-              <button className="cart__button cart__button--right">Доставка</button>
-            </div>
+              <div className="cart-right-bottom">
+                <button className="cart__button cart__button--left">Самовывоз</button>
+                <button className="cart__button cart__button--right">Доставка</button>
+              </div></div>
           </div>
         </div>
       </div>

@@ -14,124 +14,67 @@ body {
   color: #53BB51;
 }
 
-.app {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.cart {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 7fr 3fr;
 }
-
-.container {
-  z-index: 200;
-  max-width: 1170px;
-  flex-basis: 90%;
+.cart-right {
+  background-color: white;
+  padding: 22px;
+  border-radius: 10px;
 }
-
-.header {
-  margin-top: 10px;
-}
-.header-top {
+.cart-right-bottom {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
 }
-.header-logo {
-  width: 200px;
-}
-.header-bottom {
-  display: flex;
-  list-style-type: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-.header-bottom__link {
-  margin-right: 5px;
-  padding: 5px 30px;
-  font-size: 30px;
-  font-weight: normal;
-  transition: background-color 0.2s ease-out;
-  text-decoration: none;
-  color: inherit;
-}
-.header-bottom__link--active {
-  background-color: #f6fbf6;
-}
-.header-bottom__link:hover {
-  background-color: #f6fbf6;
-}
-
-.footer {
-  background-color: white;
-  z-index: 100;
-  font-family: sans-serif;
-  height: 400px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+.cart-center {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
+}
+.cart-sum {
+  display: flex;
   justify-content: space-between;
+  list-style-type: none;
+  margin: 0 0 5px;
+  padding: 0;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 30px;
+  font-weight: normal;
+  color: gray;
 }
-.footer__date {
+.cart-sum__total {
+  margin-top: 10px;
+  font-size: 26px;
+  line-height: 36px;
   font-weight: bold;
-  margin: 0;
+  color: #2e2e33;
 }
-.footer__text {
-  font-weight: normal;
-}
-
-.search {
-  flex-basis: 75%;
-  justify-self: right;
-  align-self: center;
-}
-.search__input {
-  font-size: 20px;
-}
-
-.buy-button {
-  font-size: 24px;
-  font-weight: normal;
-  line-height: 30px;
-  font-family: "Raleway", sans-serif;
-  background-color: #2e2e33;
-  color: white;
-  border: none;
-  border-top-left-radius: 5px;
-  margin-left: auto;
-  margin-bottom: 0;
-  padding: 5px;
+.cart__button {
   height: 40px;
-  align-self: flex-end;
+  flex-basis: 47%;
+  border-radius: 10px;
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: scale 50ms ease-out;
 }
-
-.weight {
-  z-index: 100;
-  height: 40px;
-  position: absolute;
-  top: 180px;
-  right: 0;
+.cart__button--left {
+  border: 1px solid gray;
+  background-color: white;
+}
+.cart__button--right {
+  border: 1px solid #2e2e33;
   background-color: #2e2e33;
   color: white;
-  font-size: 24px;
-  line-height: 30px;
-  font-weight: 400;
-  padding: 5px 10px;
-  border-top-left-radius: 5px;
 }
-
-.main {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  background-color: #f6fbf6;
-  padding: 40px 0;
-}
-.main-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.cart__button:active {
+  scale: 1.05;
 }
 
 .roll {
@@ -308,67 +251,124 @@ body {
   font-size: 20px;
 }
 
-.cart {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 7fr 3fr;
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.cart-right {
-  background-color: white;
-  padding: 22px;
-  border-radius: 10px;
+
+.container {
+  z-index: 200;
+  max-width: 1170px;
+  flex-basis: 90%;
 }
-.cart-right-bottom {
+
+.header {
+  margin-top: 10px;
+}
+.header-top {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
-.cart-center {
+.header-logo {
+  width: 200px;
+}
+.header-bottom {
+  display: flex;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.header-bottom__link {
+  margin-right: 5px;
+  padding: 5px 30px;
+  font-size: 30px;
+  font-weight: normal;
+  transition: background-color 0.2s ease-out;
+  text-decoration: none;
+  color: inherit;
+}
+.header-bottom__link--active {
+  background-color: #f6fbf6;
+}
+.header-bottom__link:hover {
+  background-color: #f6fbf6;
+}
+
+.footer {
+  background-color: white;
+  z-index: 100;
+  font-family: sans-serif;
+  height: 400px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-}
-.cart-sum {
-  display: flex;
   justify-content: space-between;
-  list-style-type: none;
-  margin: 0 0 5px;
-  padding: 0;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 20px;
+}
+.footer__date {
+  font-weight: bold;
+  margin: 0;
+}
+.footer__text {
   font-weight: normal;
-  color: gray;
 }
-.cart-sum__total {
-  margin-top: 10px;
-  font-size: 26px;
-  line-height: 36px;
-  font-weight: bold;
-  color: #2e2e33;
+
+.search {
+  flex-basis: 75%;
+  justify-self: right;
+  align-self: center;
 }
-.cart__button {
-  height: 40px;
-  flex-basis: 47%;
-  border-radius: 10px;
-  font-family: Raleway, sans-serif;
-  font-weight: bold;
-  font-size: 16px;
+.search__input {
+  font-size: 20px;
+}
+
+.buy-button {
+  font-size: 24px;
+  font-weight: normal;
   line-height: 30px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: scale 50ms ease-out;
-}
-.cart__button--left {
-  border: 1px solid gray;
-  background-color: white;
-}
-.cart__button--right {
-  border: 1px solid #2e2e33;
+  font-family: "Raleway", sans-serif;
   background-color: #2e2e33;
   color: white;
+  border: none;
+  border-top-left-radius: 5px;
+  margin-left: auto;
+  margin-bottom: 0;
+  padding: 5px;
+  height: 40px;
+  align-self: flex-end;
+  cursor: pointer;
 }
-.cart__button:active {
-  scale: 1.05;
+
+.weight {
+  z-index: 100;
+  height: 40px;
+  position: absolute;
+  top: 180px;
+  right: 0;
+  background-color: #2e2e33;
+  color: white;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-top-left-radius: 5px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #f6fbf6;
+  padding: 40px 0;
+}
+.main-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 1230px) {
