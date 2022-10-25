@@ -1,7 +1,5 @@
 @import "settings";
-@import "./pages/cart";
-@import "./pages/roll";
-@import "./pages/set";
+
 
 .app {
   display: flex;
@@ -11,7 +9,7 @@
 
 .container {
   z-index: 200;
-  max-width: 1170px;
+  max-width: 1592px;
   flex-basis: 90%;
 }
 
@@ -122,5 +120,14 @@
     justify-content: space-between;
   }
 }
+
+.sticky {
+  position: sticky;
+  top: 100px;
+}
+
+@import "./pages/cart";
+@import "./pages/roll";
+@import "./pages/set";
 
 @import "media";
