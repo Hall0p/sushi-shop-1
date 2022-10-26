@@ -126,6 +126,8 @@
   top: 100px;
 }
 
+@import "./entities/Counter";
+
 @import "./pages/cart";
 @import "./pages/roll";
 @import "./pages/set";

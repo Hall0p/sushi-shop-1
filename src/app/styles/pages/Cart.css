@@ -1,0 +1,113 @@
+.cart {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 7fr 4fr;
+  column-gap: 40px;
+}
+.cart-products {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cart-item {
+  flex-basis: 100%;
+  height: 140px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+}
+.cart-item__image {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.cart-item-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  width: 100%;
+  padding: 10px;
+}
+.cart-item__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cart-item__header {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+}
+.cart-item__weight {
+  font-size: 18px;
+  line-height: 30px;
+}
+.cart-item__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-right {
+  background-color: white;
+  padding: 22px;
+  border-radius: 10px;
+}
+.cart-right-wrapper {
+  position: relative;
+  height: 2000px;
+}
+.cart-right-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-center {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.cart-sum {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0 0 5px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: normal;
+  color: gray;
+}
+.cart-sum__total {
+  margin-top: 10px;
+  font-size: 26px;
+  line-height: 36px;
+  font-weight: bold;
+  color: #2e2e33;
+}
+.cart__button {
+  height: 40px;
+  flex-basis: 47%;
+  border-radius: 10px;
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: scale 50ms ease-out;
+}
+.cart__button--left {
+  border: 1px solid gray;
+  background-color: white;
+}
+.cart__button--right {
+  border: 1px solid #2e2e33;
+  background-color: #2e2e33;
+  color: white;
+}
+.cart__button:active {
+  scale: 1.05;
+}
+
+/*# sourceMappingURL=Cart.css.map */
