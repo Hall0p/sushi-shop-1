@@ -8,7 +8,7 @@
   flex-basis: 100%;
   cursor: pointer;
   &-line {
-    z-index: 1000;
+    z-index: 10;
     background-color: $dark;
     width: 100%;
     height: 10px;
@@ -46,7 +46,7 @@
     margin-top: 10px;
   }
   &-wall {
-    transition: transform .3s linear;
+    transition: transform .3s ease-in-out;
     z-index: 999;
     background-color: $light-green;
     position: absolute;
