@@ -1,5 +1,8 @@
 import React from 'react';
 import {useSelector} from "react-redux";
+import Counter from "../entities/Counter";
+import plus from '../shared/img/plus.svg'
+
 
 const Cart = () => {
   const sum = useSelector(state => state.sum.sum)
@@ -21,9 +24,11 @@ const Cart = () => {
                       <div className="cart-item__weight">250г.</div>
                     </div>
                     <div className="cart-item__right">
-                      <button className="cart-item__counter"></button>
+                      <Counter />
                       <span className="cart-item__price">300р.</span>
-                      <button className="cart-item__cancel"></button>
+                      <button className="cancel">
+                        <img className="cancel__image" src={plus} alt="cancel"/>
+                      </button>
                     </div>
                   </div>
                 </div>

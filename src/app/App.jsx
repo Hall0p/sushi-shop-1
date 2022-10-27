@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './index.scss'
+import './index.css'
 import Header from "../widgets/Header";
 import Footer from "../widgets/Footer";
 import {Outlet} from "react-router-dom";

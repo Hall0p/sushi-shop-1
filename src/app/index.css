@@ -102,6 +102,7 @@ body {
   margin-bottom: 0;
   padding: 5px;
   height: 40px;
+  width: 100px;
   align-self: flex-end;
   cursor: pointer;
 }
@@ -137,6 +138,45 @@ body {
 .sticky {
   position: sticky;
   top: 100px;
+}
+
+.counter {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  height: 40px;
+  padding: 5px;
+  background-color: #2e2e33;
+  border-radius: 10px;
+}
+.counter__button {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: scale 50ms;
+}
+.counter__button:active {
+  scale: 1.15;
+}
+.counter__image {
+  width: 14px;
+  height: 14px;
+}
+
+.count {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  transform: translateY(-5%);
 }
 
 .cart {
@@ -236,7 +276,7 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: scale 50ms ease-out;
+  transition: scale 200ms ease-out;
 }
 .cart__button--left {
   border: 1px solid gray;
@@ -249,6 +289,28 @@ body {
 }
 .cart__button:active {
   scale: 1.05;
+}
+
+.cancel {
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #2e2e33;
+  border: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.cancel__image {
+  width: 11px;
+  height: 11px;
+  transform: rotate(45deg);
+  transition: scale 50ms ease-out;
+}
+.cancel__image:active {
+  scale: 1.2;
 }
 
 .roll {
