@@ -3,11 +3,13 @@ import openImage from "../shared/img/roll-outside/open-roll.svg";
 import closedImage from "../shared/img/roll-outside/closed-roll.svg";
 import Switcher from "../entities/switcher/Switcher";
 import {useState} from "react";
-import {useDispatch} from "react-redux";
-import {increaseSumAction} from "../shared/store/sumReducer";
+import {useDispatch, useSelector} from "react-redux";
+import Counter from "../entities/Counter";
+import {addRollCartAction, removeRollCartAction} from "../shared/store/cartReducer";
 
 const Roll = ({isHalf = false, roll}) => {
   const dispatch = useDispatch()
+  const cart = useSelector(state => state.cart.rolls)
 
   const [switcher, setSwitcher] = useState(isHalf);
 
@@ -18,8 +20,14 @@ const Roll = ({isHalf = false, roll}) => {
     return <img src={closedImage} alt="closed roll" className="roll-ingredient__circle"/>
   }
 
+  const rollsInCart = () => {
+    return cart.filter((id) => id === roll.id).length
+  }
   const addToCart = () => {
-    dispatch(increaseSumAction(roll.price))
+    dispatch(addRollCartAction(roll.id))
+  }
+  const removeFromCart = () => {
+    dispatch(removeRollCartAction(roll.id))
   }
 
   return (
@@ -47,7 +55,7 @@ const Roll = ({isHalf = false, roll}) => {
           </div>
           <div className="roll-recipe__wrapper--inside">
             {
-              roll.inside.map((ingredient,index) => {
+              roll.inside.map((ingredient, index) => {
                 return (
                   <img
                     key={index}
@@ -67,12 +75,20 @@ const Roll = ({isHalf = false, roll}) => {
               {switcher ? 150 : 300} ₽
             </h3>
           </div>
-          <button
-            onClick={() => addToCart()}
-            className="buy-button"
-          >
-            Купить
-          </button>
+          {
+            rollsInCart()
+              ? <Counter
+                addAction={() => addToCart()}
+                removeAction={() => removeFromCart()}
+                count={rollsInCart()}
+              />
+              : <button
+                onClick={() => addToCart()}
+                className="buy-button"
+              >
+                Купить
+              </button>
+          }
         </div>
       </div>
       {roll.image
