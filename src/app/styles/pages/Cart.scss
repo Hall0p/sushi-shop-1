@@ -123,13 +123,13 @@
   justify-content: space-around;
   align-items: center;
   cursor: pointer;
+  transition: scale 100ms ease-out;
+  &:active {
+    scale: 1.1;
+  }
   &__image {
     width: 11px;
     height: 11px;
     transform: rotate(45deg);
-    transition: scale 50ms ease-out;
-    &:active {
-      scale: 1.2;
-    }
   }
 }
