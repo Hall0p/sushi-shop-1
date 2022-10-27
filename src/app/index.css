@@ -302,15 +302,15 @@ body {
   justify-content: space-around;
   align-items: center;
   cursor: pointer;
+  transition: scale 100ms ease-out;
+}
+.cancel:active {
+  scale: 1.1;
 }
 .cancel__image {
   width: 11px;
   height: 11px;
   transform: rotate(45deg);
-  transition: scale 50ms ease-out;
-}
-.cancel__image:active {
-  scale: 1.2;
 }
 
 .roll {
