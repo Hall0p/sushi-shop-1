@@ -2,8 +2,14 @@ import React, {useEffect, useState} from 'react';
 import {rollsSushi} from "../shared/rolls-&-sushi";
 import Roll from "./Roll";
 import SetLine from "../entities/SetLine";
+import {useDispatch, useSelector} from "react-redux";
+import {addSetCartAction, removeSetCartAction} from "../shared/store/cartReducer";
+import Counter from "../entities/Counter";
 
 const Set = ({set}) => {
+  const dispatch = useDispatch()
+  const cart = useSelector(state => state.cart.sets)
+
   const [isOpen, setIsOpen] = useState(false)
   const [delayedHeight, setDelayedHeight] = useState(20)
   const [height] = useState(Math.ceil(set.compound.length / 2) * 240)
@@ -18,6 +24,17 @@ const Set = ({set}) => {
     }
   },[isOpen, height])
 
+  const setsInCart = () => {
+    return cart.filter((id) => id === set.id).length
+  }
+  const addToCart = () => {
+    dispatch(addSetCartAction(set.id))
+  }
+  const removeFromCart = () => {
+    dispatch(removeSetCartAction(set.id))
+  }
+
+
   return (
     <div
       className="set"
@@ -28,6 +45,22 @@ const Set = ({set}) => {
           <h3 className="roll__header">{set.name}</h3>
           <span className="set__amount">{set.compound.length}</span>
         </div>
+        {
+          setsInCart()
+            ? <Counter
+              addAction={() => addToCart()}
+              removeAction={() => removeFromCart()}
+              count={setsInCart()}/>
+            : <button
+              onClick={(e) => {
+                e.stopPropagation()
+                addToCart()
+              }}
+              className="buy-button"
+            >
+              Купить
+            </button>
+        }
         {set.img
           ? <img src="sushi/src/widgets/Set#" alt="set" className="roll__image set__image"/>
           : <span className="set__image roll__image--warning">Картинки нет, но вы держитесь</span>

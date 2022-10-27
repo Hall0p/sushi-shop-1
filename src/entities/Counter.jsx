@@ -5,7 +5,10 @@ import plus from '../shared/img/plus.svg'
 const Counter = ({addAction, removeAction, count}) => {
 
   return (
-    <div className="counter">
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="counter"
+    >
       <button
         onClick={() => removeAction()}
         className="remove counter__button"

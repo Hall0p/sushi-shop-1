@@ -27,11 +27,11 @@ export const cartReducer = (state = defaultState, action) => {
       return {...state, sets: [...state.sets, action.payload]}
     case REMOVE_SET_CART:
       isDeleted = false
-      return {...state, rolls:
-          state.rolls.filter((roll) => {
+      return {...state, sets:
+          state.sets.filter((set) => {
             if (isDeleted) return true
             isDeleted = true
-            return roll !== action.payload
+            return set !== action.payload
           })
       }
     default:
