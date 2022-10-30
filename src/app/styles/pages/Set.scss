@@ -24,9 +24,11 @@
     background-color: $white;
     border-radius: 3px;
     height: 220px;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
+  }
+  &-wrapper {
+    padding: 10px 0 0 10px;
   }
   &-bottom {
     position: relative;

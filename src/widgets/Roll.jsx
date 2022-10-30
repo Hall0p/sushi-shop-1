@@ -75,20 +75,22 @@ const Roll = ({isHalf = false, roll}) => {
               {switcher ? 150 : 300} ₽
             </h3>
           </div>
-          {
-            rollsInCart()
-              ? <Counter
-                addAction={() => addToCart()}
-                removeAction={() => removeFromCart()}
-                count={rollsInCart()}
-              />
-              : <button
-                onClick={() => addToCart()}
-                className="buy-button"
-              >
-                Купить
-              </button>
-          }
+          <div className="buy-wrapper">
+            {
+              rollsInCart()
+                ? <Counter
+                  addAction={() => addToCart()}
+                  removeAction={() => removeFromCart()}
+                  count={rollsInCart()}
+                />
+                : <button
+                  onClick={() => addToCart()}
+                  className="buy-button"
+                >
+                  Купить
+                </button>
+            }
+          </div>
         </div>
       </div>
       {roll.image

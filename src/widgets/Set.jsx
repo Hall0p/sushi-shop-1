@@ -45,22 +45,24 @@ const Set = ({set}) => {
           <h3 className="roll__header">{set.name}</h3>
           <span className="set__amount">{set.compound.length}</span>
         </div>
-        {
-          setsInCart()
-            ? <Counter
-              addAction={() => addToCart()}
-              removeAction={() => removeFromCart()}
-              count={setsInCart()}/>
-            : <button
-              onClick={(e) => {
-                e.stopPropagation()
-                addToCart()
-              }}
-              className="buy-button"
-            >
-              Купить
-            </button>
-        }
+        <div className="buy-wrapper">
+          {
+            setsInCart()
+              ? <Counter
+                addAction={() => addToCart()}
+                removeAction={() => removeFromCart()}
+                count={setsInCart()}/>
+              : <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  addToCart()
+                }}
+                className="buy-button"
+              >
+                Купить
+              </button>
+          }
+        </div>
         {set.img
           ? <img src="sushi/src/widgets/Set#" alt="set" className="roll__image set__image"/>
           : <span className="set__image roll__image--warning">Картинки нет, но вы держитесь</span>
