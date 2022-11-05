@@ -37,6 +37,18 @@ const Header = ({filter, setFilter}) => {
               Сеты
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to='cart'
+              className={({isActive}) =>
+                isActive
+                  ? 'header-bottom__link header-bottom__link--active'
+                  : 'header-bottom__link header-bottom__link--disabled'
+              }
+            >
+              Корзина
+            </NavLink>
+          </li>
         </ul>
       </header>
     </div>
