@@ -1,11 +1,19 @@
 import React from 'react';
+import CartItem from "../entities/CartItem";
 import {useSelector} from "react-redux";
-import Counter from "../entities/Counter";
-import plus from '../shared/img/plus.svg'
+import {rollsSushi} from "../shared/rolls-&-sushi";
+import {sets} from "../shared/sets";
 
 
 const Cart = () => {
-  const sum = useSelector(state => state.sum.sum)
+  const cart = useSelector(state => state.cart)
+  const cartSets = cart.sets
+  const cartRolls = cart.rolls
+
+  const rollsList = rollsSushi
+  const setsList = sets
+
+  const sum = 100
 
   return (
     <main className="main">
@@ -15,23 +23,19 @@ const Cart = () => {
             <h1 className="cart__header">
               Моя корзина
             </h1>
+            {/*Нужно сделать так, чтобы элементы стакались, а не выводились отдельно*/}
             <div className="cart-products">
-                <div className="cart-item">
-                  <img src="#" alt="cart item" className="cart-item__image"/>
-                  <div className="cart-item-wrapper">
-                    <div className="cart-item__left">
-                      <h3 className="cart-item__header">Name</h3>
-                      <div className="cart-item__weight">250г.</div>
-                    </div>
-                    <div className="cart-item__right">
-                      <Counter />
-                      <span className="cart-item__price">300р.</span>
-                      <button className="cancel">
-                        <img className="cancel__image" src={plus} alt="cancel"/>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              {cartSets && cartSets.map(id => {
+                  const set = setsList.find((item) => item.id === id)
+                  return <CartItem key={id} item={set}/>
+                }
+              )}
+              {cartRolls && cartRolls.map(id => {
+                console.log('its working');
+                const roll = rollsList.find((item) => item.id === id)
+                  return <CartItem key={id} item={roll}/>
+                }
+              )}
             </div>
           </div>
           <div className="cart-right-wrapper">
