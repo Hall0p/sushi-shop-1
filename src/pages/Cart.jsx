@@ -25,13 +25,15 @@ const Cart = () => {
             </h1>
             {/*Нужно сделать так, чтобы элементы стакались, а не выводились отдельно*/}
             <div className="cart-products">
+              <h2 className="cart__empty">
+                {(cartRolls || cartSets) && 'Ваша корзина пуста'}
+              </h2>
               {cartSets && cartSets.map(id => {
                   const set = setsList.find((item) => item.id === id)
                   return <CartItem key={id} item={set}/>
                 }
               )}
               {cartRolls && cartRolls.map(id => {
-                console.log('its working');
                 const roll = rollsList.find((item) => item.id === id)
                   return <CartItem key={id} item={roll}/>
                 }
