@@ -7,7 +7,7 @@ import {sets} from "../shared/sets";
 
 const Cart = () => {
   const cart = useSelector(state => state.cart)
-  const cartSets = cart.sets
+  const [cartSets, setCartSets] = useState([])
   const [cartRolls, setCartRolls] = useState([])
 
   const rollsList = rollsSushi
@@ -36,7 +36,11 @@ const Cart = () => {
 
   useEffect(() => {
     setCartRolls(grouper(cart.rolls))
-  },[cart])
+  },[cart.rolls])
+
+  useEffect(() => {
+    setCartSets(grouper(cart.rolls))
+  },[cart.sets])
 
   return (
     <main className="main">
@@ -55,16 +59,18 @@ const Cart = () => {
                   : 'Ваша корзина пуста'
                 }
               </h2>
-              {cartSets && cartSets.map(id => {
+              {cartSets && cartSets.map(arr => {
+                  const id = arr[0]
+                  const amount = arr[1]
                   const set = setsList.find((item) => item.id === id)
-                  return <CartItem key={id} item={set}/>
+                  return <CartItem key={id} item={set} amount={amount}/>
                 }
               )}
               {cartRolls && cartRolls.map(arr => {
                 const id = arr[0]
                 const amount = arr[1]
                 const roll = rollsList.find((item) => item.id === id)
-                  return <CartItem key={id} item={roll} amount={amount} />
+                  return <CartItem key={id} item={roll} amount={amount}/>
                 }
               )}
             </div>
