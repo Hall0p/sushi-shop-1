@@ -8,14 +8,12 @@ import {sets} from "../shared/sets";
 const Cart = () => {
   const cart = useSelector(state => state.cart)
   const cartSets = cart.sets
-  const cartRolls = cart.rolls
+  const [cartRolls, setCartRolls] = useState([])
 
   const rollsList = rollsSushi
   const setsList = sets
 
   const sum = 100
-
-  const [cartSorted, setCartSorted] = useState([])
 
   const grouper = (arr) => {
     if (!arr) return
@@ -25,20 +23,19 @@ const Cart = () => {
       if (!arrCopy.length) return
       const firstId = arrCopy[0]
       const amount = arrCopy.filter((id) => firstId === id).length
-      result.push({[firstId]:amount})
+      result.push([firstId, amount])
       arrCopy = arrCopy.filter((id) => firstId !== id)
       group()
     }
     group()
-    const final = {}
-    result.forEach((item) => {
-      Object.assign(final, item)
-    })
-    return final
+
+    console.log(result);
+
+    return result
   }
 
   useEffect(() => {
-    setCartSorted(grouper(cart.rolls))
+    setCartRolls(grouper(cart.rolls))
   },[cart])
 
   return (
@@ -63,9 +60,11 @@ const Cart = () => {
                   return <CartItem key={id} item={set}/>
                 }
               )}
-              {cartRolls && cartRolls.map(id => {
+              {cartRolls && cartRolls.map(arr => {
+                const id = arr[0]
+                const amount = arr[1]
                 const roll = rollsList.find((item) => item.id === id)
-                  return <CartItem key={id} item={roll}/>
+                  return <CartItem key={id} item={roll} amount={amount} />
                 }
               )}
             </div>
