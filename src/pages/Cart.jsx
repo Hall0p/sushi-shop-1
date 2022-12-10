@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import CartItem from "../entities/CartItem";
 import {useSelector} from "react-redux";
 import {rollsSushi} from "../shared/rolls-&-sushi";
@@ -14,6 +14,32 @@ const Cart = () => {
   const setsList = sets
 
   const sum = 100
+
+  const [cartSorted, setCartSorted] = useState([])
+
+  const grouper = (arr) => {
+    if (!arr) return
+    let arrCopy = arr.slice(0)
+    const result = []
+    const group = () => {
+      if (!arrCopy.length) return
+      const firstId = arrCopy[0]
+      const amount = arrCopy.filter((id) => firstId === id).length
+      result.push({[firstId]:amount})
+      arrCopy = arrCopy.filter((id) => firstId !== id)
+      group()
+    }
+    group()
+    const final = {}
+    result.forEach((item) => {
+      Object.assign(final, item)
+    })
+    return final
+  }
+
+  useEffect(() => {
+    setCartSorted(grouper(cart.rolls))
+  },[cart])
 
   return (
     <main className="main">
